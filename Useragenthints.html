@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        
+
+            
+        
+    
+
+        <script type="text/javascript" nonce="b7e01b19bc7e4bacbf135006a10" src="//local.adguard.org?ts=1651367288688&amp;type=content-script&amp;dmn=www.whatismybrowser.com&amp;app=com.android.chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script>
+<script type="text/javascript" nonce="b7e01b19bc7e4bacbf135006a10" src="//local.adguard.org?ts=1651367288688&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="stylesheet preload prefetch" as="style" type="text/css" href="https://cdn.whatismybrowser.com/prod-website/static/main/css/site.min.css?cb=1650959394" />
+
+        
+    
+
+
+        
+
+
+        <title>The Client Hints Headers your web browser is sending</title>
+        <meta name="description" content="Client Hints are a new approach to telling web servers what your browser is capable of. We&#x27;ll show you which ones your browser is sending." />
+
+        <!-- Mobile meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- Open Graph meta tags -->
+        <meta property="og:site_name" content="WhatIsMyBrowser.com" />
+        <meta property="og:type" content="Website" />
+        <meta property="og:title" content="The Client Hints Headers your web browser is sending" /> 
+        <meta property="og:image" content="https://cdn.whatismybrowser.com/prod-website/static/main/images/logo/open-graph-homepage.png" /> 
+        <meta property="og:description" content="Client Hints are a new approach to telling web servers what your browser is capable of. We&#x27;ll show you which ones your browser is sending." />
+        <meta property="og:url" content="https://www.whatismybrowser.com/detect/client-hints/" />
+        <meta property="article:section" content="Technology" />
+        <meta property="article:published_time" content="2019-12-10T00:00:00" />
+        <meta property="article:modified_time" content="2022-02-21T00:00:00" />
+        
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@whatismybrowser">
+        <meta name="twitter:creator" content="@whatismybrowser">
+        <meta name="twitter:title" content="The Client Hints Headers your web browser is sending">
+        <meta name="twitter:description" content="Client Hints are a new approach to telling web servers what your browser is capable of. We&#x27;ll show you which ones your browser is sending.">
+        
+        
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="https://cdn.whatismybrowser.com/prod-website/static/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.whatismybrowser.com/prod-website/static/main/images/logo/apple-touch-icon.png" />
+        <link rel="icon" sizes="192x192" href="https://cdn.whatismybrowser.com/prod-website/static/main/images/logo/wimb-192.png">
+
+        <!-- Google -->
+        <meta name="google-site-verification" content="0F0ECU9Mnc7O7bpIelLuldRYwQQr-ZzFDOmzesu1O24" />
+        
+
+        <!-- Misc -->
+        <meta name="msapplication-config" content="none"/>
+
+        
+        <meta name="theme-color" content="#428bae">
+
+        
+        <!-- The Canonical URL for this page -->
+        <link rel="canonical" href="https://www.whatismybrowser.com/detect/client-hints/" />
+        
+
+        
+        <!-- The only translation -->
+        <link rel="alternate" hreflang="en" href="https://www.whatismybrowser.com/detect/client-hints/" />
+        <link rel="alternate" hreflang="x-default" href="https://www.whatismybrowser.com/detect/client-hints/" />
+        
+
+        <!-- Preconnect to the third party domain -->
+        <link rel="preconnect" href="https://webbrowsertests.com" />
+
+        
+        <!-- Preload javascript (it's added at the end of the page) -->
+        <link rel="preload prefetch" href="https://cdn.whatismybrowser.com/prod-website/static/main/js/site.min.js?cb=1648431995" as="script">
+        
+
+
+        
+
+    
+        <!-- Google Analytics -->
+        <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21370927-1']);
+        _gaq.push(['_setDomainName', 'www.whatismybrowser.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    
+
+    
+        <!-- Google AdSense -->
+        
+    
+
+
+
+        
+
+        
+
+        <!-- Structured Data - For the whole site: Organization and the Website itself -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "WhatIsMyBrowser.com",
+                "url": "https://www.whatismybrowser.com",
+                "foundingDate": "2010-11-10",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Brett Harris",
+                    "givenName": "Brett",
+                    "familyName": "Harris",
+                    "url": "https://www.whatismybrowser.com/about/team/brett-harris"
+                },
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://cdn.whatismybrowser.com/prod-website/static/main/images/logo/logo-words-blue-black-transparent.png",
+                    "width": 600,
+                    "height": 600
+                },
+                "sameAs": [
+                    "https://twitter.com/whatismybrowser",
+                    "https://github.com/whatismybrowser/"
+                ]
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "WhatIsMyBrowser.com",
+                "url": "https://www.whatismybrowser.com",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://cdn.whatismybrowser.com/prod-website/static/main/images/logo/open-graph-homepage.png",
+                    "width": 600,
+                    "height": 600
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://www.whatismybrowser.com/search/?q={search_term}",
+                    "query-input": "required name=search_term"
+                },
+                "sameAs": [
+                    "https://twitter.com/whatismybrowser",
+                    "https://github.com/whatismybrowser/"
+                ]
+            }
+        </script>
+
+
+    </head>
+    <body class=" section_detect section_client-hints     lang-en">
+
+        
+            
+
+
+
+        <nav id="site" aria-label="Heading and navigation">
+
+            <div id="top-logo-and-name">
+                <a href="/" aria-label="My Browser">
+                    <div id="top-logo"></div>
+                </a>
+                <div id="top-name"><a href="/"><span id="top-name-site">WhatIsMyBrowser.com</span></a></div>
+            </div>
+
+            <ul id="main-nav">
+                
+                <li class="homepage"><a href="/">My browser</a></li>
+                
+                <li class="guides"><a href="/guides/">Guides</a></li>
+                
+                <li class="clear-cache"><a href="/guides/clear-cache-history-cookies/">Clear Cache</a></li>
+                
+                <li class="detect active"><a href="/detect/">Detect my settings</a></li>
+                
+                <li class="developers-tools"><a href="/developers/tools/">Tools</a></li>
+                
+            </ul>
+
+            
+
+        </nav>
+
+
+        
+
+        <div id="content-base">
+
+            
+
+            <section class="section-block section-block-main-only" id="breadcrumbs">
+                <div class="corset">
+                    <div class="content-block-main">
+                        <nav aria-label="Breadcrumb">
+                            <ol vocab="http://schema.org/" typeof="BreadcrumbList">
+                                
+                                    
+                                <li property="itemListElement" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/">
+                                        <span property="name">
+                                            Homepage
+                                        </span>
+                                    </a>
+                                    <meta property="position" content="1">
+                                </li>
+                                    
+                                
+                                    
+                                <li property="itemListElement" typeof="ListItem">
+                                    <a property="item" typeof="WebPage" href="/detect/">
+                                        <span property="name">
+                                            Detect my settings
+                                        </span>
+                                    </a>
+                                    <meta property="position" content="2">
+                                </li>
+                                    
+                                
+                                    
+                                <li property="itemListElement" typeof="ListItem" class="current" aria-current="page">
+                                    <a property="item" typeof="WebPage" href="/detect/client-hints/">
+                                        <span property="name">
+                                            Client Hints Headers
+                                        </span>
+                                    </a>
+                                    <meta property="position" content="3">
+                                </li>
+                                    
+                                
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+
+
+            
+    
+
+
+            
+
+        
+
+            
+            
+
+        
+
+            <section class="section-block section-block-main-only">
+                <div class="corset">
+                    <div class="content-block-main">
+
+                        <h1>The Client Hints headers your browser is sending</h1>
+
+                        <p class="page-date page-updated-at">Updated at: Feb 21, 2022</p>
+
+                        <p>Client Hints are a new approach developed by the Chrome/Chromium team to allow web browsers to identify themselves and their capabilities to the websites that you visit. Traditionally browser detection was done by a combination of <a href="https://developers.whatismybrowser.com/useragents/parse/">User Agent Parsing</a> and feature detection, however technology continues to evolve and Client Hints are starting to augment and maybe one day even replace the older approaches.</p>
+
+                        <p>Client Hints offer a more structured approach for web browsing clients to let the web servers they visit know about their browser, version, platform and so on.</p>
+
+                        <p>The Client Hints system used by some web browsers is still in the early days, but here's a page which will tell you what (if any) Client Hints your web browser is sending to our server.</p>
+
+                        <p>Not all web browsers support Client Hints yet, you can investigate <a href="/detect/client-hints/faq/which-web-browsers-support-client-hints">web browsers that support Client Hints</a>.</p>
+
+                        <table class="table table-striped table-bordered table-hover table-data" id="server">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Your value</th>
+                                    <th>Definition</th>
+                                    
+                                    <th>Header/Accept-CH value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+
+                                
+                                    <tr id="server-Sec-Ch-Ua">
+                                        <th>User Agent</th>
+                                        <td><span class="code">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;101&quot;, &quot;Google Chrome&quot;;v=&quot;101&quot;</span></td>
+                                        <td>The Agent (Browser) that&#x27;s making the request</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Full-Version">
+                                        <th>User Agent Full version</th>
+                                        <td><span class="code">&quot;101.0.4951.41&quot;</span></td>
+                                        <td>The full version of the user agent (Browser)</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Full-Version</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Platform">
+                                        <th>Platform</th>
+                                        <td><span class="code">&quot;Android&quot;</span></td>
+                                        <td>The platform of the device</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Platform</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Platform-Version">
+                                        <th>Platform version</th>
+                                        <td><span class="code">&quot;12.0.0&quot;</span></td>
+                                        <td>The full platform version</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Platform-Version</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Arch">
+                                        <th>Architecture</th>
+                                        <td><span class="code">&quot;&quot;</span></td>
+                                        <td>The CPU architecture of of the device</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Arch</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Model">
+                                        <th>Model</th>
+                                        <td><span class="code">&quot;SM-F926B&quot;</span></td>
+                                        <td>The model of the device</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Model</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Ua-Mobile">
+                                        <th>Mobile</th>
+                                        <td><span class="code">?1</span></td>
+                                        <td>Is it a mobile device?</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Ua-Mobile</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Viewport-Width">
+                                        <th>Viewport Width</th>
+                                        <td><span class="code">980</span></td>
+                                        <td>The width of the primary screen</td>
+                                        
+                                        <td><span class="code">Viewport-Width</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Downlink">
+                                        <th>Downlink</th>
+                                        <td><span class="code">10</span></td>
+                                        <td>Megabits Per Second (mbps) - approximate speed of the user&#x27;s connection</td>
+                                        
+                                        <td><span class="code">Downlink</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Ect">
+                                        <th>Effective Connection Type</th>
+                                        <td><span class="code">4g</span></td>
+                                        <td>Basic outline of the user&#x27;s connection type</td>
+                                        
+                                        <td><span class="code">Ect</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Rtt">
+                                        <th>Round Trip Time</th>
+                                        <td><span class="code">50</span></td>
+                                        <td>An estimate of the round trip time of the request (on the application layer)</td>
+                                        
+                                        <td><span class="code">Rtt</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Device-Memory">
+                                        <th>Device Memory</th>
+                                        <td><span class="code">8</span></td>
+                                        <td>Roughly how many gigabytes of RAM the device has</td>
+                                        
+                                        <td><span class="code">Device-Memory</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Dpr">
+                                        <th>Device Pixel Ratio</th>
+                                        <td><span class="code">3</span></td>
+                                        <td>The ratio of pixels</td>
+                                        
+                                        <td><span class="code">Dpr</span></td>
+                                    </tr>
+                                
+                                    <tr id="server-Sec-Ch-Prefers-Color-Scheme">
+                                        <th>Prefers color scheme</th>
+                                        <td><span class="code">light</span></td>
+                                        <td>If the user prefers light or dark mode</td>
+                                        
+                                        <td><span class="code">Sec-Ch-Prefers-Color-Scheme</span></td>
+                                    </tr>
+                                
+
+                                <tr id="server-no-javascript">
+                                    <td colspan="4">JavaScript is not enabled. JavaScript needs to be enabled in order to detect extra Client Hints using Javascript.</td>
+                                </tr>
+
+                                <tr id="pending-xhr">
+                                    <td colspan="4" style="text-align: center;"></td>
+                                </tr>
+
+                            
+                            </tbody>
+                        </table>
+
+                        <h3>Client Hints detected with JavaScript</h3>
+
+                        <table class="table table-striped table-bordered table-hover table-data" id="frontend">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Your value</th>
+                                    <th>Definition</th>
+                                    <th>Browser property</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="frontend-no-javascript">
+                                    <td colspan="3">JavaScript is not enabled. JavaScript needs to be enabled in order to detect Client Hints using Javascript.</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <h2>More Information</h2>
+
+                        <p>You can find more information about Client Hints at these links:</p>
+
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Client_hints">https://developer.mozilla.org/en-US/docs/Glossary/Client_hints</a></li>
+                            <li><a href="https://wicg.github.io/ua-client-hints/">https://wicg.github.io/ua-client-hints/</a></li>
+                            <li><a href="https://github.com/WICG/ua-client-hints">https://github.com/WICG/ua-client-hints</a></li>
+                        </ul>
+
+
+                        
+            <section class="section-block section-block-category-panels section-block-faq-listing section-block-faq-listing-sub">
+                
+                    <div class="content-block-main content-block-category-panels">
+
+                        
+                            <h2><a href="/detect/client-hints/faq/">Frequently asked questions about Client Hints</a></h2>
+                        
+
+                        <ul class="category-panels">
+                            
+                            <li>
+                                <h3><a href="/detect/client-hints/faq/what-are-client-hints">What are Client Hints?</a></h3>
+                                <p>What are Client Hints all about and what are they used for?</p>
+                                <p><a href="/detect/client-hints/faq/what-are-client-hints">What Client Hints are</a></p>
+                            </li>
+                            <li>
+                                <h3><a href="/detect/client-hints/faq/which-web-browsers-support-client-hints">Which web browsers support client hints?</a></h3>
+                                <p>Not all browsers send client hints yet; does yours?</p>
+                                <p><a href="/detect/client-hints/faq/which-web-browsers-support-client-hints">Browsers that send Client Hints</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                
+            </section>
+
+
+                        <h3>More questions?</h3>
+                        <p>If you have any more questions, use the <a href="/about/contact/">contact form</a> and we'll answer it and add your question here.</p>
+
+                    </div>
+                </div>
+            </section>
+
+
+            
+
+            
+
+
+
+        </div>
+
+        
+        <footer aria-label="Page footer, contains various helpful links.">
+            <div class="main-columns">
+                
+
+                <div class="col">
+                    <h2><a href="/guides/">Guides</a></h2>
+                        <ul>
+                            <li><a href="/guides/clear-cache-history-cookies/">Clear Cache, History and Cookies</a></li>
+                            
+                            <li><a href="/search/">Search whatismybrowser.com</a></li>
+                            
+                            <li><a href="/guides/">Guides about the Internet</a></li>
+                            <li><a href="/guides/how-to-update-your-browser/faq/why-should-i-update-my-web-browser">Why update my browser?</a></li>
+                        </ul>
+                </div>
+                <div class="col">
+                    <h2><a href="/developers/tools/">Tools</a></h2>
+                        <ul>
+                            <li><a href="/developers/tools/iframe">Use our IFrame on your site</a></li>
+                            <li><a href="https://developers.whatismybrowser.com/useragents/parse/">User agent parser</a></li>
+                            <li><a href="/developers/tools/send-to-tech-help">Send browser info via email</a></li>
+                            <li><a href="/minimum-system-requirements/">Minimum System Requirements</a></li>
+                        </ul>
+                </div>
+                <div class="col">
+                    <h2><a href="https://developers.whatismybrowser.com/">Developers</a></h2>
+                        <ul>
+                            <li><a href="/guides/the-latest-user-agent/">Latest user agents</a></li>
+                            <li><a href="https://developers.whatismybrowser.com/api/">User Agent Parsing API</a></li>
+                            <li><a href="https://developers.whatismybrowser.com/useragents/explore/">Explore User Agents</a></li>
+                        </ul>
+                </div>
+                <div class="col">
+                    <h2>Connect</h2>
+                        <ul>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/about/contact/">Contact Us</a></li>
+                            <li><a href="/about/support/">Support Us</a></li>
+                            <li><a href="/about/media/">Media / Press Kit</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            
+
+
+            <section class="section-block section-block-main-only section-choose-language">
+                <div class="corset">
+                    <div class="content-block-main">
+
+                    <h2>Other languages</h2>
+
+                    
+                    <ul id="translation-options">
+                        
+                        <li><a href="/">What is my browser?</a></li>
+                        
+                        <li><a href="/el/">Ποιός είναι ο browser μου;</a></li>
+                        
+                        <li><a href="/fr/">Quel est mon navigateur ?</a></li>
+                        
+                        <li><a href="/de/">Was ist mein Browser?</a></li>
+                        
+                        <li><a href="/es/">¿Cual es mi navegador?</a></li>
+                        
+                        <li><a href="/pt/">Qual é o meu navegador?</a></li>
+                        
+                        <li><a href="/sk/">Aký mám prehliadač?</a></li>
+                        
+                    </ul>
+
+                    <p>If you have any feedback or corrections, please let us know.</p>
+                    <p><a href="/about/team/translators">Help translate whatismybrowser.com</a></p>
+
+                    
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <div class="info">
+                <a href="/about/accessibility">Accessibility Statement</a>
+            </div>
+
+            <div class="legal">
+                <a href="/">WhatIsMyBrowser.com</a> &copy; 2010 - 2022. <a href="/about/legal/">Legal</a><br />
+            </div>
+
+        </footer>
+
+        
+
+        
+
+
+        
+
+        <!-- Values from the parse, to help the frontend detection -->
+        <!-- Please don't scrape these, use the API! You'll get even more detail and you'll also help the project! -->
+        <script>
+
+            var detection_helper_software_name_code = "chrome";
+            var detection_helper_software_name = "Chrome";
+            var detection_helper_operating_system_name_code = "android";
+            var detection_helper_operating_system_name = "Android";
+
+        </script>
+
+
+
+
+        
+        
+                
+
+        <script>
+            var third_party_domain = "webbrowsertests.com"; // which server do third-party checks use?
+        </script>
+
+        
+
+        
+        <script defer src="https://cdn.whatismybrowser.com/prod-website/static/main/js/site.min.js?cb=1648431995"></script>
+        
+
+        
+
+
+        
+
+
+        
+        
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+
+                // -- Remove the No Javascript Warnings
+                try {
+                    document.querySelector("#frontend-no-javascript").remove();
+                    document.querySelector("#server-no-javascript").remove();
+                }
+                catch(e) {};
+
+                // Server Side, Extra Client hints
+                // -- wait a few seconds then make another request to the server, which will contain
+                // the requested client hints; the response then includes what those values are.
+                // This is only necessary the first time; if the user reloads the page a second time, the
+                // server will serve the page with the client hints natively in the response.
+
+                if (document.querySelector("#pending-xhr td") !== null) {
+                    document.querySelector("#pending-xhr td").innerHTML = "<b>We just requested to see more Client Hints from your browser, please wait...</b>";
+
+                    setTimeout(function() {
+                        
+                        xhr = new XMLHttpRequest();
+                        xhr.open('GET', '/detect/client-hints/?response_format=json');
+                        xhr.onload = function() {
+                            //console.log(xhr.status, xhr.responseText);
+
+                            // -- parse the response as JSON
+                            try {
+                                var jsonResponse = JSON.parse(xhr.responseText);
+                            }
+                            catch(e) {
+                                document.querySelector("#pending-xhr").innerHTML = "There was a problem detecting further Client Hints. Please reload this page.";
+                            };
+
+                            if (jsonResponse) {
+                                // -- get the Client Hints Frontend table
+                                server_table_body = document.querySelector("table#server tbody");
+
+                                // -- Remove the "please wait" message
+                                document.querySelector("#pending-xhr").remove();
+
+                                for (var x in jsonResponse.client_hints) {
+
+                                    //console.log(jsonResponse.client_hints[x]);
+
+                                    if (document.querySelector("#server-"+jsonResponse.client_hints[x]["accept-ch"]) === null) {
+                                        // It's not in the page from the backend, add it on the frontend
+
+                                        //console.log("here for ", jsonResponse.client_hints[x]["accept-ch"]);
+
+                                        new_server_clienthint_row = server_table_body.insertRow();
+                                        new_server_clienthint_row.id = "server-"+jsonResponse.client_hints[x]["accept-ch"];
+
+                                        new_server_clienthint_row_name = document.createElement("th");
+                                        new_server_clienthint_row_name.innerHTML = jsonResponse.client_hints[x]["name"];
+
+                                        new_server_clienthint_row_value = document.createElement("td");
+                                        new_server_clienthint_row_value.innerHTML = jsonResponse.client_hints[x]["value"];
+
+                                        new_server_clienthint_row_definition = document.createElement("td");
+                                        new_server_clienthint_row_definition.innerHTML = jsonResponse.client_hints[x]["definition"];
+
+                                        new_server_clienthint_row_accept_ch = document.createElement("td");
+                                        new_server_clienthint_row_accept_ch.innerHTML = '<span class="code">'+jsonResponse.client_hints[x]["accept-ch"]+'</span>';
+
+                                        new_server_clienthint_row.appendChild(new_server_clienthint_row_name);
+                                        new_server_clienthint_row.appendChild(new_server_clienthint_row_value);
+                                        new_server_clienthint_row.appendChild(new_server_clienthint_row_definition);
+                                        new_server_clienthint_row.appendChild(new_server_clienthint_row_accept_ch);
+                                    }
+                                }
+                            }
+                        };
+                        xhr.send();
+                    }, 500);
+                }
+
+                // Frontend/Javascript Client Hints
+
+                // -- get the Client Hints Frontend table
+                frontend_table_body = document.querySelector("table#frontend tbody");
+
+                // If Client Hints via Javascript are available, show them:
+                if (WIMB.detect.client_hints.frontend.available()) {
+
+                    setTimeout(function() {
+
+                        // -- add rows to the table
+                        let rows_to_add = [
+                            {
+                                "id": "frontend-architecture",
+                                "name": "Architecture",
+                                "value": WIMB.detect.client_hints.frontend.architecture(),
+                                "definition": "The CPU architecture of the device you're using",
+                                "browser_property": "architecture",
+                            },
+                            {
+                                "id": "frontend-bitness",
+                                "name": "Bitness",
+                                "value": WIMB.detect.client_hints.frontend.bitness(),
+                                "definition": "The CPU architecture of your device",
+                                "browser_property": "bitness",
+                            },
+                            {
+                                "id": "frontend-brands-string",
+                                "name": "Brands String",
+                                "value": WIMB.detect.client_hints.frontend.brands_string(),
+                                "definition": "The Brand/Name of your browser",
+                                "browser_property": "navigator.userAgentData.brands",
+                            },
+                            {
+                                "id": "frontend-model",
+                                "name": "Model",
+                                "value": WIMB.detect.client_hints.frontend.model(),
+                                "definition": "The model number of your device",
+                                "browser_property": "model",
+                            },
+                            {
+                                "id": "frontend-platform",
+                                "name": "Platform",
+                                "value": WIMB.detect.client_hints.frontend.platform(),
+                                "definition": "The Platform (or Operating System) you're using",
+                                "browser_property": "platform",
+                            },
+                            {
+                                "id": "frontend-platform-version",
+                                "name": "Platform Version",
+                                "value": WIMB.detect.client_hints.frontend.platform_version(),
+                                "definition": "The Platform (or Operating System) version number",
+                                "browser_property": "platformVersion",
+                            },
+                            {
+                                "id": "frontend-ua-full-version",
+                                "name": "UA Full Version",
+                                "value": WIMB.detect.client_hints.frontend.ua_full_version(),
+                                "definition": "The full version number of your browser",
+                                "browser_property": "uaFullVersion",
+                            },
+                        ];
+
+                        for (var x in rows_to_add) {
+                            client_hint_row = frontend_table_body.insertRow();
+                            client_hint_row.id = rows_to_add[x]["id"];
+
+                            client_hint_row_name = document.createElement("th");
+                            client_hint_row_name.innerHTML = rows_to_add[x]["name"];
+
+                            client_hint_row_value = document.createElement("td");
+                            if (typeof rows_to_add[x]["value"] === "undefined") {
+                                client_hint_row_value.innerHTML = "<i>undefined</i>";
+                            }
+                            else if (rows_to_add[x]["value"] === "" || rows_to_add[x]["value"] === null) {
+                                client_hint_row_value.innerHTML = "<i>null</i>";
+                            }
+                            else {
+                                client_hint_row_value.innerHTML = '<span class="code">'+rows_to_add[x]["value"]+'</span>';
+                            }
+
+                            client_hint_row_definition = document.createElement("td");
+                            client_hint_row_definition.innerHTML = rows_to_add[x]["definition"];
+
+                            client_hint_row_browser_property = document.createElement("td");
+                            client_hint_row_browser_property.innerHTML = '<span class="code">'+rows_to_add[x]["browser_property"]+'</span>';
+
+                            client_hint_row.appendChild(client_hint_row_name);
+                            client_hint_row.appendChild(client_hint_row_value);
+                            client_hint_row.appendChild(client_hint_row_definition);
+                            client_hint_row.appendChild(client_hint_row_browser_property);
+                        }
+
+                    }, 500);
+
+                }
+                // Otherwise, Client Hints via Javascript aren't available, show a message about it:
+                else {
+
+                    // -- Show a "not available" message
+                    client_hints_frontend_not_available = frontend_table_body.insertRow();
+
+                    client_hints_frontend_not_available_text = document.createElement("td");
+                    client_hints_frontend_not_available_text.colSpan=4;
+                    client_hints_frontend_not_available_text.innerHTML = "Client Hints aren't supported by your browser yet. You can investigate other <a href=\"/detect/client-hints/faq/which-web-browsers-support-client-hints\">web browsers that support Client Hints</a>.";
+
+                    client_hints_frontend_not_available.appendChild(client_hints_frontend_not_available_text);
+                }
+            });
+        </script>        
+
+
+    </body>
+</html>
